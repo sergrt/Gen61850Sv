@@ -1,0 +1,14 @@
+This is IEC61850-9.2LE Software Generator.
+
+Software can generate different shapes of voltages and currents, with bunch of editable parameters - amplitude, frequency, phase. Moreover, it can generate arbitrary waveform by defining harmonics amplitudes and phases.
+
+Additionaly this software can be used to control sampled values stream on any network port. It has decoding module (it's not so efficient, but works well).
+
+Software ready to be launched on devices with sensor screens as it has virtual keyboard.
+
+This tool also has some network-controlled parameters to remote control generation and signal params.
+
+Additional information can be found in _documents folder.
+
+Code have been being developed with Qt and Visual Studio (not needed to build). Using libpcap and qwt libs (included).
+Distributed under Apache 2.0 license

@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/GenSv">
+        <file>Resources/meander.gif</file>
+        <file>Resources/saw.gif</file>
+        <file>Resources/sin.gif</file>
+        <file>Resources/triangle.gif</file>
+        <file>Resources/start_button.gif</file>
+        <file>Resources/stop_button.gif</file>
+        <file>Resources/diagramm.ico</file>
+        <file>Resources/pencil_ruler.ico</file>
+        <file>Resources/movies.ico</file>
+        <file>Resources/cd_edit.ico</file>
+        <file>Resources/cd_go.ico</file>
+        <file>Resources/gear_in.ico</file>
+        <file>Resources/keyboard.gif</file>
+        <file>Resources/edit_button.ico</file>
+        <file>Resources/cancel.ico</file>
+        <file>Resources/external.ico</file>
+        <file>Resources/splash.jpg</file>
+    </qresource>
+</RCC>

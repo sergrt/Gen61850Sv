@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{ED228477-B889-3231-B18E-14E50263C33A}</ProjectGuid>
+    <RootNamespace>qwt</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <PlatformToolSet>v120</PlatformToolSet>
+    <OutputDirectory>..\lib\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>qwt</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <PlatformToolSet>v120</PlatformToolSet>
+    <OutputDirectory>..\lib\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>Unicode</CharacterSet>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>qwtd</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">qwt</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">qwtd</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include;..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport;..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg;..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL;..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets;..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui;..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE;..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent;..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore;moc;..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtSvg;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -Zc:strictStrings -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_DLL;QWT_DLL;QWT_MAKEDLL;QT_NO_DEBUG;QT_NO_KEYWORDS;QT_PRINTSUPPORT_LIB;QT_SVG_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CONCURRENT_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(QTDIR)\lib\Qt5PrintSupport.lib;$(QTDIR)\lib\Qt5Svg.lib;$(QTDIR)\lib\Qt5OpenGL.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Concurrent.lib;$(QTDIR)\lib\Qt5Core.lib;Qt5Core.lib;Qt5Gui.lib;Qt5PrintSupport.lib;Qt5Svg.lib;Qt5Widgets.lib;Qt5Concurrent.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\qt\qt5.4.0_msvc2013\5.4\msvc2013\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\qwt.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_DLL;QWT_DLL;QWT_MAKEDLL;QT_NO_DEBUG;QT_NO_KEYWORDS;QT_PRINTSUPPORT_LIB;QT_SVG_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CONCURRENT_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtSvg;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtPrintSupport;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_DLL;QWT_DLL;QWT_MAKEDLL;QT_NO_KEYWORDS;QT_PRINTSUPPORT_LIB;QT_SVG_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CONCURRENT_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(QTDIR)\lib\Qt5PrintSupportd.lib;$(QTDIR)\lib\Qt5Svgd.lib;$(QTDIR)\lib\Qt5OpenGLd.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Concurrentd.lib;$(QTDIR)\lib\Qt5Cored.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5PrintSupportd.lib;Qt5Svgd.lib;Qt5Widgetsd.lib;Qt5Concurrentd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\qt\qt5.4.0_msvc2013\5.4\msvc2013\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <OutputFile>$(OutDir)\qwtd.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_DLL;QWT_DLL;QWT_MAKEDLL;QT_NO_KEYWORDS;QT_PRINTSUPPORT_LIB;QT_SVG_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CONCURRENT_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="moc\moc_qwt_abstract_legend.cpp" />
+    <ClCompile Include="moc\moc_qwt_abstract_scale.cpp" />
+    <ClCompile Include="moc\moc_qwt_abstract_slider.cpp" />
+    <ClCompile Include="moc\moc_qwt_analog_clock.cpp" />
+    <ClCompile Include="moc\moc_qwt_compass.cpp" />
+    <ClCompile Include="moc\moc_qwt_counter.cpp" />
+    <ClCompile Include="moc\moc_qwt_dial.cpp" />
+    <ClCompile Include="moc\moc_qwt_dyngrid_layout.cpp" />
+    <ClCompile Include="moc\moc_qwt_knob.cpp" />
+    <ClCompile Include="moc\moc_qwt_legend.cpp" />
+    <ClCompile Include="moc\moc_qwt_legend_label.cpp" />
+    <ClCompile Include="moc\moc_qwt_magnifier.cpp" />
+    <ClCompile Include="moc\moc_qwt_panner.cpp" />
+    <ClCompile Include="moc\moc_qwt_picker.cpp" />
+    <ClCompile Include="moc\moc_qwt_plot.cpp" />
+    <ClCompile Include="moc\moc_qwt_plot_canvas.cpp" />
+    <ClCompile Include="moc\moc_qwt_plot_glcanvas.cpp" />
+    <ClCompile Include="moc\moc_qwt_plot_magnifier.cpp" />
+    <ClCompile Include="moc\moc_qwt_plot_panner.cpp" />
+    <ClCompile Include="moc\moc_qwt_plot_picker.cpp" />
+    <ClCompile Include="moc\moc_qwt_plot_renderer.cpp" />
+    <ClCompile Include="moc\moc_qwt_plot_zoomer.cpp" />
+    <ClCompile Include="moc\moc_qwt_sampling_thread.cpp" />
+    <ClCompile Include="moc\moc_qwt_scale_widget.cpp" />
+    <ClCompile Include="moc\moc_qwt_slider.cpp" />
+    <ClCompile Include="moc\moc_qwt_text_label.cpp" />
+    <ClCompile Include="moc\moc_qwt_thermo.cpp" />
+    <ClCompile Include="moc\moc_qwt_wheel.cpp" />
+    <ClCompile Include="qwt_abstract_legend.cpp" />
+    <ClCompile Include="qwt_abstract_scale.cpp" />
+    <ClCompile Include="qwt_abstract_scale_draw.cpp" />
+    <ClCompile Include="qwt_abstract_slider.cpp" />
+    <ClCompile Include="qwt_analog_clock.cpp" />
+    <ClCompile Include="qwt_arrow_button.cpp" />
+    <ClCompile Include="qwt_clipper.cpp" />
+    <ClCompile Include="qwt_color_map.cpp" />
+    <ClCompile Include="qwt_column_symbol.cpp" />
+    <ClCompile Include="qwt_compass.cpp" />
+    <ClCompile Include="qwt_compass_rose.cpp" />
+    <ClCompile Include="qwt_counter.cpp" />
+    <ClCompile Include="qwt_curve_fitter.cpp" />
+    <ClCompile Include="qwt_date.cpp" />
+    <ClCompile Include="qwt_date_scale_draw.cpp" />
+    <ClCompile Include="qwt_date_scale_engine.cpp" />
+    <ClCompile Include="qwt_dial.cpp" />
+    <ClCompile Include="qwt_dial_needle.cpp" />
+    <ClCompile Include="qwt_dyngrid_layout.cpp" />
+    <ClCompile Include="qwt_event_pattern.cpp" />
+    <ClCompile Include="qwt_graphic.cpp" />
+    <ClCompile Include="qwt_interval.cpp" />
+    <ClCompile Include="qwt_interval_symbol.cpp" />
+    <ClCompile Include="qwt_knob.cpp" />
+    <ClCompile Include="qwt_legend.cpp" />
+    <ClCompile Include="qwt_legend_data.cpp" />
+    <ClCompile Include="qwt_legend_label.cpp" />
+    <ClCompile Include="qwt_magnifier.cpp" />
+    <ClCompile Include="qwt_math.cpp" />
+    <ClCompile Include="qwt_matrix_raster_data.cpp" />
+    <ClCompile Include="qwt_null_paintdevice.cpp" />
+    <ClCompile Include="qwt_painter.cpp" />
+    <ClCompile Include="qwt_painter_command.cpp" />
+    <ClCompile Include="qwt_panner.cpp" />
+    <ClCompile Include="qwt_picker.cpp" />
+    <ClCompile Include="qwt_picker_machine.cpp" />
+    <ClCompile Include="qwt_pixel_matrix.cpp" />
+    <ClCompile Include="qwt_plot.cpp" />
+    <ClCompile Include="qwt_plot_abstract_barchart.cpp" />
+    <ClCompile Include="qwt_plot_axis.cpp" />
+    <ClCompile Include="qwt_plot_barchart.cpp" />
+    <ClCompile Include="qwt_plot_canvas.cpp" />
+    <ClCompile Include="qwt_plot_curve.cpp" />
+    <ClCompile Include="qwt_plot_dict.cpp" />
+    <ClCompile Include="qwt_plot_directpainter.cpp" />
+    <ClCompile Include="qwt_plot_glcanvas.cpp" />
+    <ClCompile Include="qwt_plot_grid.cpp" />
+    <ClCompile Include="qwt_plot_histogram.cpp" />
+    <ClCompile Include="qwt_plot_intervalcurve.cpp" />
+    <ClCompile Include="qwt_plot_item.cpp" />
+    <ClCompile Include="qwt_plot_layout.cpp" />
+    <ClCompile Include="qwt_plot_legenditem.cpp" />
+    <ClCompile Include="qwt_plot_magnifier.cpp" />
+    <ClCompile Include="qwt_plot_marker.cpp" />
+    <ClCompile Include="qwt_plot_multi_barchart.cpp" />
+    <ClCompile Include="qwt_plot_panner.cpp" />
+    <ClCompile Include="qwt_plot_picker.cpp" />
+    <ClCompile Include="qwt_plot_rasteritem.cpp" />
+    <ClCompile Include="qwt_plot_renderer.cpp" />
+    <ClCompile Include="qwt_plot_rescaler.cpp" />
+    <ClCompile Include="qwt_plot_scaleitem.cpp" />
+    <ClCompile Include="qwt_plot_seriesitem.cpp" />
+    <ClCompile Include="qwt_plot_shapeitem.cpp" />
+    <ClCompile Include="qwt_plot_spectrocurve.cpp" />
+    <ClCompile Include="qwt_plot_spectrogram.cpp" />
+    <ClCompile Include="qwt_plot_svgitem.cpp" />
+    <ClCompile Include="qwt_plot_textlabel.cpp" />
+    <ClCompile Include="qwt_plot_tradingcurve.cpp" />
+    <ClCompile Include="qwt_plot_xml.cpp" />
+    <ClCompile Include="qwt_plot_zoneitem.cpp" />
+    <ClCompile Include="qwt_plot_zoomer.cpp" />
+    <ClCompile Include="qwt_point_3d.cpp" />
+    <ClCompile Include="qwt_point_data.cpp" />
+    <ClCompile Include="qwt_point_mapper.cpp" />
+    <ClCompile Include="qwt_point_polar.cpp" />
+    <ClCompile Include="qwt_raster_data.cpp" />
+    <ClCompile Include="qwt_round_scale_draw.cpp" />
+    <ClCompile Include="qwt_sampling_thread.cpp" />
+    <ClCompile Include="qwt_scale_div.cpp" />
+    <ClCompile Include="qwt_scale_draw.cpp" />
+    <ClCompile Include="qwt_scale_engine.cpp" />
+    <ClCompile Include="qwt_scale_map.cpp" />
+    <ClCompile Include="qwt_scale_widget.cpp" />
+    <ClCompile Include="qwt_series_data.cpp" />
+    <ClCompile Include="qwt_slider.cpp" />
+    <ClCompile Include="qwt_spline.cpp" />
+    <ClCompile Include="qwt_symbol.cpp" />
+    <ClCompile Include="qwt_system_clock.cpp" />
+    <ClCompile Include="qwt_text.cpp" />
+    <ClCompile Include="qwt_text_engine.cpp" />
+    <ClCompile Include="qwt_text_label.cpp" />
+    <ClCompile Include="qwt_thermo.cpp" />
+    <ClCompile Include="qwt_transform.cpp" />
+    <ClCompile Include="qwt_wheel.cpp" />
+    <ClCompile Include="qwt_widget_overlay.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="qwt.h" />
+    <CustomBuild Include="qwt_abstract_legend.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_abstract_legend.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_abstract_legend.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_abstract_legend.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_abstract_legend.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="qwt_abstract_scale.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_abstract_scale.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_abstract_scale.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_abstract_scale.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_abstract_scale.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_abstract_scale_draw.h" />
+    <CustomBuild Include="qwt_abstract_slider.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_abstract_slider.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_abstract_slider.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_abstract_slider.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_abstract_slider.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="qwt_analog_clock.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_analog_clock.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_analog_clock.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_analog_clock.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_analog_clock.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_arrow_button.h" />
+    <ClInclude Include="qwt_clipper.h" />
+    <ClInclude Include="qwt_color_map.h" />
+    <ClInclude Include="qwt_column_symbol.h" />
+    <CustomBuild Include="qwt_compass.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_compass.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_compass.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_compass.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_compass.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_compass_rose.h" />
+    <ClInclude Include="qwt_compat.h" />
+    <CustomBuild Include="qwt_counter.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_counter.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_counter.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_counter.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_counter.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_curve_fitter.h" />
+    <ClInclude Include="qwt_date.h" />
+    <ClInclude Include="qwt_date_scale_draw.h" />
+    <ClInclude Include="qwt_date_scale_engine.h" />
+    <CustomBuild Include="qwt_dial.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_dial.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_dial.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_dial.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_dial.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_dial_needle.h" />
+    <CustomBuild Include="qwt_dyngrid_layout.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_dyngrid_layout.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_dyngrid_layout.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_dyngrid_layout.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_dyngrid_layout.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_event_pattern.h" />
+    <ClInclude Include="qwt_global.h" />
+    <ClInclude Include="qwt_graphic.h" />
+    <ClInclude Include="qwt_interval.h" />
+    <ClInclude Include="qwt_interval_symbol.h" />
+    <CustomBuild Include="qwt_knob.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_knob.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_knob.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_knob.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_knob.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="qwt_legend.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_legend.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_legend.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_legend.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_legend.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_legend_data.h" />
+    <CustomBuild Include="qwt_legend_label.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_legend_label.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_legend_label.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_legend_label.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_legend_label.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="qwt_magnifier.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_magnifier.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_magnifier.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_magnifier.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_magnifier.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_math.h" />
+    <ClInclude Include="qwt_matrix_raster_data.h" />
+    <ClInclude Include="qwt_null_paintdevice.h" />
+    <ClInclude Include="qwt_painter.h" />
+    <ClInclude Include="qwt_painter_command.h" />
+    <CustomBuild Include="qwt_panner.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_panner.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_panner.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_panner.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_panner.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="qwt_picker.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_picker.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_picker.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_picker.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_picker.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_picker_machine.h" />
+    <ClInclude Include="qwt_pixel_matrix.h" />
+    <CustomBuild Include="qwt_plot.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_plot.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_plot.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_plot_abstract_barchart.h" />
+    <ClInclude Include="qwt_plot_barchart.h" />
+    <CustomBuild Include="qwt_plot_canvas.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_canvas.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_plot_canvas.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_canvas.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_plot_canvas.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_plot_curve.h" />
+    <ClInclude Include="qwt_plot_dict.h" />
+    <ClInclude Include="qwt_plot_directpainter.h" />
+    <CustomBuild Include="qwt_plot_glcanvas.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_glcanvas.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_plot_glcanvas.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_glcanvas.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_plot_glcanvas.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_plot_grid.h" />
+    <ClInclude Include="qwt_plot_histogram.h" />
+    <ClInclude Include="qwt_plot_intervalcurve.h" />
+    <ClInclude Include="qwt_plot_item.h" />
+    <ClInclude Include="qwt_plot_layout.h" />
+    <ClInclude Include="qwt_plot_legenditem.h" />
+    <CustomBuild Include="qwt_plot_magnifier.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_magnifier.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_plot_magnifier.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_magnifier.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_plot_magnifier.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_plot_marker.h" />
+    <ClInclude Include="qwt_plot_multi_barchart.h" />
+    <CustomBuild Include="qwt_plot_panner.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_panner.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_plot_panner.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_panner.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_plot_panner.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="qwt_plot_picker.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_picker.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_plot_picker.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_picker.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_plot_picker.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_plot_rasteritem.h" />
+    <CustomBuild Include="qwt_plot_renderer.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_renderer.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_plot_renderer.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_renderer.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_plot_renderer.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_plot_rescaler.h" />
+    <ClInclude Include="qwt_plot_scaleitem.h" />
+    <ClInclude Include="qwt_plot_seriesitem.h" />
+    <ClInclude Include="qwt_plot_shapeitem.h" />
+    <ClInclude Include="qwt_plot_spectrocurve.h" />
+    <ClInclude Include="qwt_plot_spectrogram.h" />
+    <ClInclude Include="qwt_plot_svgitem.h" />
+    <ClInclude Include="qwt_plot_textlabel.h" />
+    <ClInclude Include="qwt_plot_tradingcurve.h" />
+    <ClInclude Include="qwt_plot_zoneitem.h" />
+    <CustomBuild Include="qwt_plot_zoomer.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_zoomer.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_plot_zoomer.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_plot_zoomer.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_plot_zoomer.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_point_3d.h" />
+    <ClInclude Include="qwt_point_data.h" />
+    <ClInclude Include="qwt_point_mapper.h" />
+    <ClInclude Include="qwt_point_polar.h" />
+    <ClInclude Include="qwt_raster_data.h" />
+    <ClInclude Include="qwt_round_scale_draw.h" />
+    <ClInclude Include="qwt_samples.h" />
+    <CustomBuild Include="qwt_sampling_thread.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_sampling_thread.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_sampling_thread.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_sampling_thread.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_sampling_thread.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_scale_div.h" />
+    <ClInclude Include="qwt_scale_draw.h" />
+    <ClInclude Include="qwt_scale_engine.h" />
+    <ClInclude Include="qwt_scale_map.h" />
+    <CustomBuild Include="qwt_scale_widget.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_scale_widget.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_scale_widget.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_scale_widget.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_scale_widget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_series_data.h" />
+    <ClInclude Include="qwt_series_store.h" />
+    <CustomBuild Include="qwt_slider.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_slider.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_slider.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_slider.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_slider.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_spline.h" />
+    <ClInclude Include="qwt_symbol.h" />
+    <ClInclude Include="qwt_system_clock.h" />
+    <ClInclude Include="qwt_text.h" />
+    <ClInclude Include="qwt_text_engine.h" />
+    <CustomBuild Include="qwt_text_label.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_text_label.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_text_label.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_text_label.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_text_label.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="qwt_thermo.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_thermo.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_thermo.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_thermo.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_thermo.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_transform.h" />
+    <CustomBuild Include="qwt_wheel.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_wheel.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_DEBUG -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qwt_wheel.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+%40echo moc qwt_wheel.h &amp;&amp; 
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\moc\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_DLL -DQWT_DLL -DQWT_MAKEDLL -DQT_NO_KEYWORDS -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_CORE_LIB -D_WINDLL "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtPrintSupport" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtSvg" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtOpenGL" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtWidgets" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtGui" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtANGLE" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtConcurrent" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\include\QtCore" "-I.\moc" "-I.\..\..\..\..\qt\qt5.4.0_msvc2013\5.4\msvc2013\mkspecs\win32-msvc2013"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qwt_wheel.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qwt_widget_overlay.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" Qt5Version_x0020_Win32="Qt 5.4.0" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
