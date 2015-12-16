@@ -7,21 +7,21 @@ EthernetHeader::EthernetHeader(const unsigned char dstMAC[MAC_LENGTH], const uns
     for (unsigned char i = 0; i < MAC_LENGTH; i++) {
         this->dstMAC[i] = dstMAC[i];
         this->srcMAC[i] = srcMAC[i];
-	}
-	
-	// TPID always the same
+    }
+    
+    // TPID always the same
     TPID[0] = 0x81;
     TPID[1] = 0x00;
 
-	// EtherType always the same
+    // EtherType always the same
     EtherType[0] = 0x88;
     EtherType[1] = 0xBA;
 
-	// Fill TCI with default values
-	unsigned char user_priority = 4; // default priority = 4
-	bool CFI = 0; // should be 0
-	unsigned short VID = 0;	// default is 0
-	setTCI(user_priority, CFI, VID);
+    // Fill TCI with default values
+    unsigned char user_priority = 4; // default priority = 4
+    bool CFI = 0; // should be 0
+    unsigned short VID = 0;	// default is 0
+    setTCI(user_priority, CFI, VID);
 }
 
 EthernetHeader::~EthernetHeader(void) {
@@ -34,13 +34,12 @@ void EthernetHeader::setTCI(const unsigned char user_priority, const bool CFI, c
     TCI[0] |= static_cast< unsigned char >(VID >> 8) & 0x0F;
     TCI[1] = static_cast< unsigned char>(VID);
 }
-/************************************************************************/
-/* 20140915T113800 - Убран VLAN                                         */
-/************************************************************************/
-void EthernetHeader::getPacket(vector<unsigned char>& res) {
-	res.clear();
 
-	/*
+// VLAN support have been removed
+void EthernetHeader::getPacket(vector<unsigned char>& res) {
+    res.clear();
+
+    /*
     res.resize(MAC_LENGTH * 2 + 2 + 2 + 2);
     memcpy(res.data(), &dstMAC, MAC_LENGTH);
     memcpy(res.data() + MAC_LENGTH, &srcMAC, MAC_LENGTH);
@@ -48,11 +47,11 @@ void EthernetHeader::getPacket(vector<unsigned char>& res) {
     memcpy(res.data() + MAC_LENGTH * 2 , &TPID, 2);
     memcpy(res.data() + MAC_LENGTH * 2 + 2, &TCI, 2);
     memcpy(res.data() + MAC_LENGTH * 2 + 2 + 2, &EtherType, 2);
-	*/
+    */
 
-	res.resize(MAC_LENGTH * 2 + 2);
-	memcpy(res.data(), &dstMAC, MAC_LENGTH);
-	memcpy(res.data() + MAC_LENGTH, &srcMAC, MAC_LENGTH);
+    res.resize(MAC_LENGTH * 2 + 2);
+    memcpy(res.data(), &dstMAC, MAC_LENGTH);
+    memcpy(res.data() + MAC_LENGTH, &srcMAC, MAC_LENGTH);
 
-	memcpy(res.data() + MAC_LENGTH * 2, &EtherType, 2);
+    memcpy(res.data() + MAC_LENGTH * 2, &EtherType, 2);
 }

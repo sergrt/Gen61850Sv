@@ -4,20 +4,19 @@
 #include <QWidget>
 
 namespace Ui {
-	class Splash;
-	}
+    class Splash;
+    }
 
-class Splash : public QWidget
-{
-	Q_OBJECT
+class Splash : public QWidget {
+    Q_OBJECT
 
 public:
-	explicit Splash(QWidget *parent = 0);
-	~Splash();
+    explicit Splash(QWidget *parent = 0);
+    ~Splash();
 
-	bool step();
+    bool step();
 private:
-	Ui::Splash *ui;
+    Ui::Splash *ui;
 };
 
 #endif // SPLASH_H

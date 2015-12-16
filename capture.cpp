@@ -53,7 +53,6 @@ void CCapture::decode_light(vector<unsigned char>& data, SVDecoded& res) {
         TLV ASDU(sequenceASDU_data);
         //ASDUs.push_back(ASDU);
 
-
         TLV& ASDU_cur = ASDU;
         vector<unsigned char> asdu_data;
         ASDU_cur.getData(asdu_data);
@@ -177,6 +176,7 @@ void CCapture::decode_light(vector<unsigned char>& data, SVDecoded& res) {
     }
 }
 
+// This is less efficient legacy code
 void CCapture::decode(const vector<unsigned char>& raw_data, SVDecoded& res) {
     vector<unsigned char> data = raw_data;
     // Exclude ethernet header
@@ -350,27 +350,27 @@ void CCapture::decode(const vector<unsigned char>& raw_data, SVDecoded& res) {
         for(int x = 0; x < tmp.size(); x++)
             svID_str.push_back(tmp[x]);
 
-        res.svID.push_back( svID_str );
+        res.svID.push_back(svID_str);
 
-        res.Ua.push_back( Ua );
-        res.Ub.push_back( Ub );
-        res.Uc.push_back( Uc );
-        res.Un.push_back( Un );
+        res.Ua.push_back(Ua);
+        res.Ub.push_back(Ub);
+        res.Uc.push_back(Uc);
+        res.Un.push_back(Un);
 
-        res.QUa.push_back( QUa );
-        res.QUb.push_back( QUb );
-        res.QUc.push_back( QUc );
-        res.QUn.push_back( QUn );
+        res.QUa.push_back(QUa);
+        res.QUb.push_back(QUb);
+        res.QUc.push_back(QUc);
+        res.QUn.push_back(QUn);
 
-        res.Ia.push_back( Ia );
-        res.Ib.push_back( Ib );
-        res.Ic.push_back( Ic );
-        res.In.push_back( In );
+        res.Ia.push_back(Ia);
+        res.Ib.push_back(Ib);
+        res.Ic.push_back(Ic);
+        res.In.push_back(In);
 
-        res.QIa.push_back( QIa );
-        res.QIb.push_back( QIb );
-        res.QIc.push_back( QIc );
-        res.QIn.push_back( QIn );
+        res.QIa.push_back(QIa);
+        res.QIb.push_back(QIb);
+        res.QIc.push_back(QIc);
+        res.QIn.push_back(QIn);
     }
 }
 
@@ -408,7 +408,7 @@ void CCapture::run() {
     }
 
     pcapHandle = pcap_open_live(d->name,            // name of the device
-        4096/*65535*/,                // portion of the packet to capture (only the first 100 bytes)
+        4096/*65535*/,                // portion of the packet to capture
         1,  // promiscuous mode
         1000,               // read timeout
         errbuf              // error buffer
@@ -420,8 +420,8 @@ void CCapture::run() {
     memcpy(filter_app, streamFilter.toLocal8Bit().data(), streamFilter.length());
     filter_app[streamFilter.length()] = 0x00;
 
-    bpf_u_int32 mask; /* сетевая маска нашего интерфейса */
-    bpf_u_int32 net; /* IP-адрес нашего интерфейса */
+    bpf_u_int32 mask;
+    bpf_u_int32 net;
 
     //Get net address and interface mask
     pcap_lookupnet(d->name, &net, &mask, errbuf);
@@ -440,6 +440,7 @@ void CCapture::run() {
 
     bool doAdd = false;
 
+    // Data logging
     //QFile f("_data.log");
     //f.open(QIODevice::WriteOnly);
 
@@ -454,20 +455,6 @@ void CCapture::run() {
             memcpy(packet_data.data(),pkt_data,pkt_header->caplen);
 
             SVDecoded d;
-            /*
-            QTime t_check;
-            t_check.start();
-            for (int dd = 0; dd < 10000; ++dd)
-            decode(packet_data, d);
-            qDebug() << "10000 packets decode test time = " << t_check.elapsed();
-
-            t_check.start();
-            for (int dd = 0; dd < 10000; ++dd) {
-                vector<unsigned char> packet_data1 = packet_data;
-                decode_light(packet_data1, d);
-            }
-            qDebug() << "10000 packets decode_light test time = " << t_check.elapsed() << " + delta";
-            */
             decode_light(packet_data, d);
 
             if (d.svID[0] == streamName) {
@@ -491,25 +478,6 @@ void CCapture::run() {
                     }
                 }
             }
-
-
-
-            /*
-            CSVDecoded * tmp = new CSVDecoded( d );
-            bool res_tmp = false;
-            emit appendData( tmp, &res_tmp );
-            while(!res_tmp) {
-                QTest::qWait( 3 );
-            }
-            */
-
-            /*for (int i = 0; i < d.counter.count(); i++) {
-                QString str;
-                str = QString( "counter = %1" ).arg( d.counter[ i ] ) + str;
-                qDebug( str.toLocal8Bit() );
-            }
-            */
-
         } else if (res == 0) { //timeout - do nothing
             doAdd = false;
             dataMeasured.clear();

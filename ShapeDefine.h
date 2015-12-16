@@ -5,24 +5,23 @@
 #include "ui_ShapeDefine.h"
 #include "editwnd.h"
 
-class ShapeDefine : public QWidget
-{
-	Q_OBJECT
+class ShapeDefine : public QWidget {
+    Q_OBJECT
 
 public:
-	ShapeDefine(QWidget *parent = 0);
-	~ShapeDefine();
+    ShapeDefine(QWidget *parent = 0);
+    ~ShapeDefine();
 
 private:
-	Ui::ShapeDefine ui;
-	EditWnd *editWnd;
+    Ui::ShapeDefine ui;
+    EditWnd *editWnd;
 
-	void saveShape();
-	void loadShape();
+    void saveShape();
+    void loadShape();
 public slots:	
-	void onEditClick();
-	void onApplyValueClick();
-	void onCancelValueClick();
+    void onEditClick();
+    void onApplyValueClick();
+    void onCancelValueClick();
 };
 
 #endif // SHAPEDEFINE_H

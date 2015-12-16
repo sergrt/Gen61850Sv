@@ -4,13 +4,13 @@
 
 class SVPacket {
 public:
-	SVPacket(const EthernetHeader& header, const unsigned char appid[2], const TLV& savPDU);
-	~SVPacket(void);
+    SVPacket(const EthernetHeader& header, const unsigned char appid[2], const TLV& savPDU);
+    ~SVPacket(void);
 
 private:
-	EthernetHeader header;
+    EthernetHeader header;
     unsigned char APPID[2]; // APPID 0x4000 (default) to 0x7FFF
-	TLV savPDU;
+    TLV savPDU;
 public:
-	void getPacket(vector<unsigned char>& res);
+    void getPacket(vector<unsigned char>& res);
 };

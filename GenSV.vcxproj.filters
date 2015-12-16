@@ -77,9 +77,6 @@
     <ClCompile Include="capture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="chart.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="genParams.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -102,12 +99,6 @@
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="Release\moc_capture.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="Debug\moc_chart.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_chart.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="Debug\moc_generator.cpp">
@@ -209,9 +200,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <CustomBuild Include="capture.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="chart.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <ClInclude Include="genParams.h">

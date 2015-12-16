@@ -11,4 +11,6 @@ This tool also has some network-controlled parameters to remote control generati
 Additional information can be found in _documents folder.
 
 Code have been being developed with Qt and Visual Studio (not needed to build). Using libpcap and qwt libs (included).
+Note that it is not production-grade code, it's kinda handy tool for various manipulations with IEC61850-9.2. There is much C-like code in this masterpiece.
+
 Distributed under Apache 2.0 license

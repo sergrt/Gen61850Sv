@@ -3,20 +3,19 @@
 
 CSyncObject::CSyncObject()
     : mutex(), syncVal(SV_UNLOCKED), locker(NULL) {
-
 }
 bool CSyncObject::tryLock(QObject* obj) {
-	bool res = false;
+    bool res = false;
     QMutexLocker ml(&mutex);
     if (locker == obj && syncVal == SV_LOCKED) // already locket by obj
-		res = true;
+        res = true;
 
     if (syncVal != SV_LOCKED) {
-		locker = obj;
-		syncVal = SV_LOCKED;
-	}
+        locker = obj;
+        syncVal = SV_LOCKED;
+    }
 
-	return res;	
+    return res;	
 }
 void CSyncObject::lock(QObject* obj) {
     while(true) {
@@ -25,20 +24,20 @@ void CSyncObject::lock(QObject* obj) {
             break;
 
         if (syncVal != SV_LOCKED) {
-			locker = obj;
-			syncVal = SV_LOCKED;
-			break;
-		}
+            locker = obj;
+            syncVal = SV_LOCKED;
+            break;
+        }
 
-		ml.unlock();
+        ml.unlock();
         QTest::qWait(20);
-	}
+    }
 }
 void CSyncObject::unlock(QObject* obj) {
     if (obj != locker)
-		throw( "Something bad happened" );
+        throw( "Something bad happened" );
 
     QMutexLocker ml(&mutex);
-	syncVal = SV_UNLOCKED;
-	locker = NULL;
+    syncVal = SV_UNLOCKED;
+    locker = NULL;
 }

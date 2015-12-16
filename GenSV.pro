@@ -23,7 +23,6 @@ linux: INCLUDEPATH += qwt/src
 
 SOURCES += \
     capture.cpp \
-    chart.cpp \
     editwnd.cpp \
     EthernetHeader.cpp \
     generator.cpp \
@@ -45,7 +44,6 @@ SOURCES += \
 
 HEADERS  += \
     capture.h \
-    chart.h \
     editwnd.h \
     EthernetHeader.h \
     generator.h \
