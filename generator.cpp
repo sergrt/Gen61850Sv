@@ -7,13 +7,11 @@
 #include <QTest>
 #include "qmath.h"
 #include <QNetworkInterface>
-//#include <chrono>
-//#include <thread>
 #include "helpers.h"
 
-CGenerator::CGenerator(QObject *parent, bool *stop, SGenParams *params/*, CSyncObject * sync*/)
+CGenerator::CGenerator(QObject* parent, bool* stop, SGenParams* params/*, CSyncObject * sync*/)
     : header(params->dstMac, params->srcMac) {
-    m_Stop = stop;	
+    m_Stop = stop;
     genParams = params;
     //m_sync = sync;
     QObject::connect(this, SIGNAL(setGeneratorIsRunning(bool)), parent, SLOT(setGeneratorIsRunning(bool)));
@@ -30,19 +28,18 @@ void CGenerator::run() {
     pcap_if_t *d = alldevs;
 
     QString mac;
-
     SGenParams genParamsLocal(*genParams);
     
-    for (int i = 0; i < sizeof(genParamsLocal.srcMac); i++ ) {
+    for (int i = 0; i < sizeof(genParamsLocal.srcMac); i++)
         mac += QString("%1:").arg(genParamsLocal.srcMac[i], 2, 16, QChar('0')).toUpper();
-    }
+
     mac.remove(mac.length() - 1, 1);
 
     QList<QNetworkInterface> ifs = QNetworkInterface::allInterfaces();
     int ifsID = 0;
     while (ifsID < ifs.count()) {
-        qDebug( ifs.at(ifsID).hardwareAddress().toLocal8Bit());
-        qDebug( mac.toLocal8Bit());
+        qDebug(ifs.at(ifsID).hardwareAddress().toLocal8Bit());
+        qDebug(mac.toLocal8Bit());
 
         if (ifs.at(ifsID).hardwareAddress() == mac)
             break;
@@ -58,11 +55,11 @@ void CGenerator::run() {
         curID = curID.right(curID.length() - curID.indexOf('{'));
     }
 
-    pcap_t * fp= pcap_open_live(d->name,            // name of the device
-        4096,//65535,                // portion of the packet to capture
-        1,  // promiscuous mode
-        1000,               // read timeout
-        errbuf              // error buffer
+    pcap_t* fp= pcap_open_live(d->name, // name of the device
+        4096,                           // portion of the packet to capture
+        1,                              // promiscuous mode
+        1000,                           // read timeout
+        errbuf                          // error buffer
         );
 
     emit setGeneratorIsRunning(true);
@@ -78,19 +75,19 @@ void CGenerator::run() {
     delayTime = 100;
     frameTimer.start();
     frameCounter = 0;
-
+    const int FRAME_CNT_UPDATE_TIMER = 16; // How often udate sleep interval
     while(!*m_Stop) {
-        SVPacket p = generatePacket(cnt);
-        vector<unsigned char> tmp;
         //QTime t_check;
         //t_check.start();
-        //for (int dd = 0; dd < 100000; ++dd)
+        //for (int dd = 0; dd < 100000; ++dd) {
+        SVPacket p = generatePacket(cnt);
+        vector<unsigned char> tmp;
         p.getPacket(tmp);
+        //}
         //qDebug() << "100000 packets generate test time = " << t_check.elapsed();
         //qDebug() << "Ethernet frame length = " << tmp.size();
 
-        int res = pcap_sendpacket(fp, tmp.data(), tmp.size());
-        if (res == 0) {
+        if (pcap_sendpacket(fp, tmp.data(), tmp.size()) == 0) {
             total_transmitted++;
             frameCounter++;
             controlFrameCounter++;
@@ -98,53 +95,34 @@ void CGenerator::run() {
             qDebug() << "Error transmitting! " << pcap_geterr(fp);
         }
 
-        //double elapsed = frameTimer.elapsed();
-        if (/*elapsed >= 1000 * sec_part*/frameCounter >= 10) {
-            updateDelayTime();
-            frameCounter = 0;
-            frameTimer.start();
-        }
-
-        uDelay(delayTime);
-
         if (cnt == 0) {
             qDebug() << "Frame counter" << controlFrameCounter << "in " << controlTimer.elapsed() << "total_transmitted = " << total_transmitted;
             controlFrameCounter = 0;
             controlTimer.start();
         }
 
+        if (frameCounter >= FRAME_CNT_UPDATE_TIMER) {
+            updateDelayTime();
+            frameCounter = 0;
+            frameTimer.start();
+        }
+
+        uDelay(delayTime);
     }
     pcap_close(fp);
     emit setGeneratorIsRunning(false);
 
     qDebug() << "Total frames send" << total_transmitted;
 }
-/*
-void CGenerator::uDelay(unsigned int val) {
-    LARGE_INTEGER freq = {0};
-    LARGE_INTEGER iStart, iStop;
-    if (freq.QuadPart == 0)
-        QueryPerformanceFrequency(&freq), freq.QuadPart /= 1000;
-    
-    QueryPerformanceCounter(&iStart);
-    while (true) {
-        QueryPerformanceCounter(&iStop);
-        double sleep = ((double)iStop.QuadPart - (double)iStart.QuadPart);
 
-        if ( sleep > val )
-            break;
-    }	
-}
-*/
-void CGenerator::updateDelayTime() {	
-    double elapsed = frameTimer.elapsed();
+void CGenerator::updateDelayTime() {
+    const double elapsed = frameTimer.elapsed();
 
-    int desiredRate = genParams->getFramesPerPeriod() * 50 /*genParams.freq*/ / (genParams->getValsPerPacket());
-    double actualRate = 1000.0 * frameCounter / elapsed;
-    double delayAdd = 1000.0 / (double)desiredRate - 1000.0 / actualRate;
+    const int desiredRate = genParams->getFramesPerPeriod() * 50 /*genParams.freq*/ / (genParams->getValsPerPacket());
+    const double actualRate = 1000.0 * frameCounter / elapsed;
+    const double delayAdd = 1000.0 / (double)desiredRate - 1000.0 / actualRate;
 
-     //if (delayAdd > 0)
-    if (delayAdd != 0xFFFFFFFF)
+    if (delayAdd != DBL_MAX)
         delayTime += round(delayAdd * 1000.0);
     if (delayTime < 0)
         delayTime = 0;
@@ -155,12 +133,12 @@ void CGenerator::updateDelayTime() {
 SVPacket CGenerator::generatePacket(int& counter) {
     SGenParams genParamsLocal(*genParams);
     //////////////////////////////////////////////////////////////////////////
-    // Create savPDU TLV	
+    // Create savPDU TLV
 
     vector<unsigned char> tmp;
 
     //////////////////////////////////////////////////////////////////////////
-    // noASDU	
+    // noASDU
     // const unsigned char asdu_count = 0x08; // Number of groups in one packet - 1 for 80 points, 8 for 256
 
     const unsigned char asdu_count = genParamsLocal.getValsPerPacket();//(genParams.discrete == 80 ? 0x01 : 0x08); // Число групп в одном пакете - 1 для 80 точек, 8 для 256
@@ -195,7 +173,7 @@ SVPacket CGenerator::generatePacket(int& counter) {
         //////////////////////////////////////////////////////////////////////////
         //smpSync - flag, identifying if there is external time sync
         tmp.clear();
-        //if ( counter == 1 )
+        //if (counter == 1)
             tmp.push_back(0x01);
         //else
             //tmp.push_back( 0x00 );
@@ -247,15 +225,14 @@ SVPacket CGenerator::generatePacket(int& counter) {
             val_Un = val_Ua;
         } else if (genParamsLocal.shape == SGL_SHAPE_TRIANGLE) {
             int cPos = counterForGeneration  - (int)(counterForGeneration / pt_count) * pt_count;
-            if (cPos < pt_count * 0.25 ) {
+            if (cPos < pt_count * 0.25)
                 val_Ua = genParamsLocal.Ua_A * 100  * cPos / (pt_count * 0.25);
-            } else if (cPos < pt_count * 0.5 ) {
+            else if (cPos < pt_count * 0.5)
                 val_Ua = genParamsLocal.Ua_A * 100  * 4 * (pt_count * 0.5 - cPos) / pt_count;
-            } else if (cPos < pt_count * 0.75  ) {
+            else if (cPos < pt_count * 0.75)
                 val_Ua = -1 * genParamsLocal.Ua_A * 100  * 4 * (cPos - pt_count * 0.5) / pt_count;
-            } else {
+            else
                 val_Ua = -1 * genParamsLocal.Ua_A * 100  * 4 * (pt_count - cPos) / pt_count;
-            }
 
             val_Ub = val_Ua;
             val_Uc = val_Ua;
@@ -353,15 +330,14 @@ SVPacket CGenerator::generatePacket(int& counter) {
             val_In = val_Ia;
         } else if (genParamsLocal.shape == SGL_SHAPE_TRIANGLE) {
             int cPos = counterForGeneration  - (int)(counterForGeneration / pt_count) * pt_count;
-            if (cPos < pt_count * 0.25 ) {
+            if (cPos < pt_count * 0.25)
                 val_Ia = genParamsLocal.Ia_A * 1000  * cPos / (pt_count * 0.25);
-            } else if (cPos < pt_count * 0.5 ) {
+            else if (cPos < pt_count * 0.5)
                 val_Ia = genParamsLocal.Ia_A * 1000  * 4 * (pt_count * 0.5 - cPos) / pt_count;
-            } else if (cPos < pt_count * 0.75  ) {
+            else if (cPos < pt_count * 0.75)
                 val_Ia = -1 * genParamsLocal.Ia_A * 1000  * 4 * (cPos - pt_count * 0.5) / pt_count;
-            } else {
+            else
                 val_Ia = -1 * genParamsLocal.Ia_A * 1000  * 4 * (pt_count - cPos) / pt_count;
-            }
 
             val_Ib = val_Ia;
             val_Ic = val_Ia;
@@ -447,7 +423,7 @@ SVPacket CGenerator::generatePacket(int& counter) {
 
         // Ib
         rs = tmp.size();
-        tmp.resize( rs + 8 );
+        tmp.resize(rs + 8);
         rmemcpy(tmp.data() + rs, (const unsigned char * const)&iValIb, 4);
         memcpy(tmp.data() + rs + 4, &zero, 4);
 
@@ -487,7 +463,7 @@ SVPacket CGenerator::generatePacket(int& counter) {
         rmemcpy(tmp.data() + rs, (const unsigned char * const)&iValUn, 4);
         memcpy(tmp.data() + rs + 4, &zero, 4);
 
-        TLV dataSet( 0x87, tmp );
+        TLV dataSet(0x87, tmp);
 
         vector<unsigned char> asdu_data_total;
         svID.getPacket(tmp);
