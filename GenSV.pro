@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT += core gui network testlib widgets printsupport
+QT += svg
 
 #VERSION = 1.5.0a
 #DEFINES += VERSION=\\\"$$VERSION\\\"
@@ -73,7 +74,8 @@ FORMS    += mainwindow.ui \
 
 win32: LIBS += -L/work_projects/GenSv/WinPCap/Lib -lwpcap \
     -L/work_projects/GenSv/qwt/Lib -lqwtd
-linux: LIBS += -lpcap -L~/work_projects/GenSv/trunk/qwt/lib -lqwt
+#linux: LIBS += -lpcap -L~/work_projects/GenSv/trunk/qwt/lib -lqwt
+linux: LIBS += -lpcap -Lqwt/lib -lqwt
 
 TRANSLATIONS   = GenSV_en.ts \
 GenSV_ru.ts
