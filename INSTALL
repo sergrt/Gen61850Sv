@@ -1,0 +1,27 @@
+on ubuntu 20.04
+
+
+sudo apt install qt5-default
+sudo apt-get install build-essential
+sudo apt-get install libfontconfig1
+sudo apt-get install mesa-common-dev
+sudo apt-get install libglu1-mesa-dev
+sudo apt install libpcap libpcap-dev
+sudo apt install libpcap-dev
+sudo apt install libqwt-qt5-dev
+sudo apt install libsvg-qt5-dev
+sudo apt-get install libqt5svg5*
+sudo apt-get install qttools5-*
+
+mkdir -p ~/projects
+
+cd ~/projects
+git clone https://github.com/sergrt/Gen61850Sv.git
+
+cd ~/projects/Gen61850Sv/qwt
+qmake
+make
+
+cd ~/projects/Gen61850Sv
+qmake
+make

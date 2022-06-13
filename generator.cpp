@@ -8,6 +8,7 @@
 #include "qmath.h"
 #include <QNetworkInterface>
 #include "helpers.h"
+#include <cfloat>
 
 CGenerator::CGenerator(QObject* parent, bool* stop, SGenParams* params/*, CSyncObject * sync*/)
     : header(params->dstMac, params->srcMac) {
