@@ -11,6 +11,11 @@ sudo apt install libqwt-qt5-dev
 sudo apt-get install libqt5svg5*
 sudo apt-get install qttools5-*
 
+# depending on particular linux distro following packages could be needed to be installed:
+# sudo apt install libpcap
+# sudo apt install libsvg-qt5-dev
+
+
 mkdir -p ~/projects
 
 cd ~/projects
