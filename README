@@ -16,3 +16,5 @@ Note that it is not production-grade code, it's kinda handy tool for various man
 Works under Windows and Linux.
 
 Distributed under Apache 2.0 license
+
+**Please note** this is an embedded software, so some settings looks weird. To use generator/capture you must tweak settings.ini - `macFront` and `macRear`. Also I am not sure whether it works on newer Windows versions.
