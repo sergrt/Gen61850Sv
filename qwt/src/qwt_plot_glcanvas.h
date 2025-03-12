@@ -12,7 +12,7 @@
 
 #include "qwt_global.h"
 #include <qframe.h>
-#include <qgl.h>
+#include <QtOpenGL\qgl.h>
 
 class QwtPlot;
 

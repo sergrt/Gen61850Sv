@@ -95,68 +95,17 @@
     <ClCompile Include="settings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Debug\moc_capture.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_capture.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="Debug\moc_generator.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_generator.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="Debug\moc_mainwindow.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_mainwindow.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="Debug\moc_VirtualKeyboard.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_VirtualKeyboard.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="VirtualKeyboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ShapeDisplay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Debug\moc_ShapeDisplay.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_ShapeDisplay.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\qrc_GenSv.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
     <ClCompile Include="ShapeDefine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Debug\moc_ShapeDefine.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_ShapeDefine.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="splash.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Debug\moc_splash.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_splash.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="Debug\moc_PlotCurve.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_PlotCurve.cpp">
-      <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="PlotCurve.cpp">
       <Filter>Source Files</Filter>
@@ -164,23 +113,11 @@
     <ClCompile Include="TcpServer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Debug\moc_TcpServer.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_TcpServer.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="scpi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="editwnd.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Debug\moc_editwnd.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_editwnd.cpp">
-      <Filter>Generated Files\Release</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -199,44 +136,26 @@
     <ClInclude Include="TLV.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <CustomBuild Include="capture.h">
+    <QtMoc Include="capture.h">
       <Filter>Header Files</Filter>
-    </CustomBuild>
+    </QtMoc>
     <ClInclude Include="genParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <CustomBuild Include="generator.h">
+    <QtMoc Include="generator.h">
       <Filter>Header Files</Filter>
-    </CustomBuild>
+    </QtMoc>
     <ClInclude Include="helpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <CustomBuild Include="mainwindow.h">
+    <QtMoc Include="mainwindow.h">
       <Filter>Header Files</Filter>
-    </CustomBuild>
+    </QtMoc>
     <ClInclude Include="settings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_VirtualKeyboard.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_ShapeDisplay.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_ShapeDefine.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_splash.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="scpi.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_editwnd.h">
-      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -248,47 +167,47 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="mainwindow.ui">
+    <QtUic Include="mainwindow.ui">
       <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="VirtualKeyboard.ui">
+    </QtUic>
+    <QtUic Include="VirtualKeyboard.ui">
       <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="VirtualKeyboard.h">
+    </QtUic>
+    <QtMoc Include="VirtualKeyboard.h">
       <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="ShapeDisplay.h">
+    </QtMoc>
+    <QtMoc Include="ShapeDisplay.h">
       <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="ShapeDisplay.ui">
+    </QtMoc>
+    <QtUic Include="ShapeDisplay.ui">
       <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="GenSv.qrc">
+    </QtUic>
+    <QtRcc Include="GenSv.qrc">
       <Filter>Resource Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="ShapeDefine.h">
+    </QtRcc>
+    <QtMoc Include="ShapeDefine.h">
       <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="ShapeDefine.ui">
+    </QtMoc>
+    <QtUic Include="ShapeDefine.ui">
       <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="splash.ui">
+    </QtUic>
+    <QtUic Include="splash.ui">
       <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="splash.h">
+    </QtUic>
+    <QtMoc Include="splash.h">
       <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="PlotCurve.h">
+    </QtMoc>
+    <QtMoc Include="PlotCurve.h">
       <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="TcpServer.h">
+    </QtMoc>
+    <QtMoc Include="TcpServer.h">
       <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="editwnd.h">
+    </QtMoc>
+    <QtMoc Include="editwnd.h">
       <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="editwnd.ui">
+    </QtMoc>
+    <QtUic Include="editwnd.ui">
       <Filter>Form Files</Filter>
-    </CustomBuild>
+    </QtUic>
   </ItemGroup>
 </Project>

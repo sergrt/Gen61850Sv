@@ -47,13 +47,25 @@ void CGenerator::run() {
         ifsID++;
     }
 
-    QString ifName = ifs.at(ifsID).name();
-    QString curID = QString(d->name);
-    curID = curID.right(curID.length() - curID.indexOf('{'));
-    while (ifName != curID) {
+    auto targetAddresses = ifs.at(ifsID).addressEntries();
+    bool foundInterface = false;
+    while (d) {
+        auto address = d->addresses;
+        while (address) {
+            auto addrStr = AddrToString(address->addr);
+            for (auto targetAddress : targetAddresses) {
+                if (targetAddress.ip().toString() == addrStr) {
+                    foundInterface = true;
+                    break;
+                }
+            }
+            if (foundInterface)
+                break;
+            address = address->next;
+        }
+        if (foundInterface)
+            break;
         d = d->next;
-        curID = QString(d->name);
-        curID = curID.right(curID.length() - curID.indexOf('{'));
     }
 
     pcap_t* fp= pcap_open_live(d->name, // name of the device

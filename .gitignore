@@ -49,3 +49,6 @@ qrc_*
 # executable file
 GenSv
 
+.vs/
+x64/Debug/
+x64/Release/

@@ -4,6 +4,19 @@ Software can generate different shapes of voltages and currents, with bunch of e
 
 Additionaly this software can be used to control sampled values stream on any network port. It has decoding module (it's not so efficient, but works well).
 
+# Recent information interlude
+
+This code is well-outdated, but I am getting requests from people want to run it on modern OSes. So I spent a little time to make it compile and work for Win7/10/11 with Qt 5.12.12.
+
+The code itself is ugly AF (I was a student), so I just made necessary changes for network adapters to power on and work.
+
+sln files were updated to be working with VS 2022 and 141 toolchain.
+
+If you just want to play around - get latest release archive.
+
+# Continue
+
+
 Software ready to be launched on devices with sensor screens as it has virtual keyboard.
 
 This tool also has some network-controlled parameters to remote control generation and signal params.

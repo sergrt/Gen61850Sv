@@ -54,3 +54,23 @@ void uDelay(unsigned int val) {
     #endif
 
 }
+
+QString AddrToString(sockaddr* sa)
+{
+    char s[INET6_ADDRSTRLEN];
+    switch (sa->sa_family) {
+    case AF_INET:
+        inet_ntop(AF_INET, &(((struct sockaddr_in*)sa)->sin_addr), s, INET6_ADDRSTRLEN);
+        break;
+
+    case AF_INET6:
+        inet_ntop(AF_INET6, &(((struct sockaddr_in6*)sa)->sin6_addr), s, INET6_ADDRSTRLEN);
+        break;
+
+    default:
+        strncpy(s, "Unknown AF", INET6_ADDRSTRLEN);
+        return NULL;
+    }
+
+    return QString::fromLocal8Bit(s);
+}
