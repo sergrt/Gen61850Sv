@@ -1,3 +1,6 @@
+### ⚠️Warning: seriously outdated⚠️
+_Kept because some people still getting use of it_
+
 This is IEC61850-9.2LE Software Generator.
 
 Software can generate different shapes of voltages and currents, with bunch of editable parameters - amplitude, frequency, phase. Moreover, it can generate arbitrary waveform by defining harmonics amplitudes and phases.
